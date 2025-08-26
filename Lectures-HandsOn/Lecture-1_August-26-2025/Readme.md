@@ -178,6 +178,8 @@ Here, `.` means that we copy the file to the current folder you are in.
 
 Please use either `cat` or `vi` to look at this input file. 
 
+Note: the `%chk=Tyrosine_b3lyp_cc-pvdz_opt.chk` line in the input file is to specify the name of so-called checkpoint file (`.chk`) that Gaussian will also output from the calculation. This is a binary (i.e., non-text file) with some additional information that one can look at using GaussView. We often needed to use this file to extract some further information from the calculation, like molecular orbitals. **You should always make the filename of the checkpoint file is the same as the input file.**. 
+
 You should then submit the file using the `g16` wrapper using the following command
 
 ```
@@ -186,18 +188,20 @@ g16 -i Tyrosine_b3lyp_cc-pvdz_opt.gjf -p compchem.36 -c 9 -m 16gb -s local
 
 This will run a calculation using 9 cores (each node has 36 cores, so using more than 36 will not work). You can check that the calculation is running using the `squeue` commands. 
 
-Now, you might observe that the run did not finish correctly. That is because there is an error in the format of the Gaussian input file. Figure out the issue and re-submit the calculation. Using 9 core, the calculation should take around 3-4 minutes.  
+When the run has finished, it will copy the log file (`.log`) back to the folder where you submitted the run. Please check that the run finsihed correctly by opening the log file by using the `vi` editor or the `cat` command. If you observe that the that the run did not finish correctly, please check the Gaussian input file has the right format. Figure out the issue and re-submit the calculation. Using 9 core, the calculation should take around 3-4 minutes.  
+
+Note that the `g16` wrapper will add a suffix to the filename of the log file with the date and time when the calculation was submitted, e.g., `Tyrosine_b3lyp_cc-pvdz_opt_26Aug25-1016.log`. 
 
 Once the calculation has finished, you can use visualize the results by using either GaussView that is started by using the `gv6` command or ChimeraX that is started using the `ChimeraX`. For example, you can look at how the geometry changes during the optimization and how the energy goes down, and you can also look at the molecular orbitals. This will be shown in the class. 
 
 You can also use the molden code to look at the geometrical optimization:
 ```
-molden Tyrosine_b3lyp_cc-pvdz_opt.log
+molden Tyrosine_b3lyp_cc-pvdz_opt_<DATE/TIME>.log
 ```
 
 You can extract the final geometry using the `get_g16_co` script:
 ```
-get_g16_co Tyrosine_b3lyp_cc-pvdz_opt.log
+get_g16_co Tyrosine_b3lyp_cc-pvdz_opt_<DATE/TIME>.log
 ```
 
 This will create a file named `outcoo.xyz` that has the XYZ coordinates (in units of Angstrom) for the final geometry. Here, we will rename this file so that it has the same prefix name as the input file 
@@ -210,7 +214,15 @@ Tyrosine_b3lyp_cc-pvdz_opt.final.xyz
 ```
 We can then use this geometry for further calculations. 
 
-Now, you should do the same calculation for L-Tryptophan. You should get the initial coordinates by using a smiles string from Pubchem. You can use the Jupyter notebook shown in class to do this. Make sure that this initial geometry looks reasonable. Here, you need to copy and edit the previously used input file. 
+### Another calculation for L-Tryptophan
+
+Now, you should do the same calculation for L-Tryptophan. 
+
+You should get the initial coordinates by using a SMILES string from PubChem. You can use the Jupyter notebook shown in class to do this. Make sure that this initial geometry looks reasonable. 
+
+Here, you need to copy the previously used input file to new file that you will use for the `L-Tryptophan`. You should use a descriptive name for the input file. You need to replace the old atomic coordinates in the input file with the new initial coordinates for L-Tryptophan.
+
+Note: make sure that `%chk=` line has the right filename corresponding to the filename of the new input file. 
 
 
 
