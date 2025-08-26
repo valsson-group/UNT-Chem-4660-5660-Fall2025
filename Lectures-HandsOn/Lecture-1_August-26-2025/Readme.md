@@ -214,7 +214,7 @@ Tyrosine_b3lyp_cc-pvdz_opt.final.xyz
 ```
 We can then use this geometry for further calculations. 
 
-### Another calculation for L-Tryptophan
+### Performa another calculation for L-Tryptophan
 
 Now, you should do the same calculation for L-Tryptophan. 
 
