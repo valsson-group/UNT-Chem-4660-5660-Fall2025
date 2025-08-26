@@ -20,13 +20,13 @@ where `<USERNAME>` is the user name you were given in class.
 
 If you are logging on for the first time, you must change the password by using `passwd` command. 
 
-Note: you can only connect to cruntch4 if you are on the UNT network, so the above command will only work if you located on campus or are using [VPN](https://itservices.cas.unt.edu/services/accounts-servers/articles/cisco-anyconnect-mobility-client-vpn) to connect to the UNT network. 
+Note: you can only connect to cruntch4 if you are on the UNT network, so the above command will only work if you are located on campus or are using [VPN](https://itservices.cas.unt.edu/services/accounts-servers/articles/cisco-anyconnect-mobility-client-vpn) to connect to the UNT network. 
 
 Note: if your using another terminal than MobaXterm, you should use the `-X` flag for `ssh` to enable X windows forwarding so that you can use graphical programs.  
 
 ### Home folder and basic commands 
 
-When you log on to cruntch4, you will faced with a bash shell and located in your home folder that has the path `/home/<USERNAME>`. 
+When you log on to cruntch4, you will be faced with a bash shell and located in your home folder that has the path `/home/<USERNAME>`. 
 
 Some basic commands: 
 - `pwd` - to see the path to the current folder.
@@ -45,7 +45,7 @@ Some basic commands:
 - `rm <FILE>` - delete a file.
 - `rm -r <FOLDER>` - delete a folder.
 
-Note: please do not use spaces in file and folder names.
+**Note: Please do not use spaces in file and folder names.**
 
 ### Editing files
 
@@ -98,11 +98,13 @@ Post Processing:
 
 For example, you can use the following example:
 ```
-g16 -i <INPUT FILENAME>.gjf -p compchem.36 -m 16gb -s local
+g16 -i <INPUT FILENAME>.gjf -p compchem.36 -m 16gb -s local -c 9
 ```
-You can monitor the job by using the `squeue` command. 
+Note that the order of arguments (i.e., flags) is not important. 
 
-In this example, we are submitting a job to the `compchem.36` queue on cruntch4 (the `-p compchem.36` flag). The `-s local` flag specifies that the calculations are performed on a scratch/temporary folder on the local disk of the node. The checkpoint and output files are copied over to the folder from where the calculation is submitted once it is over. During the calculation, a symbolic link is created to this scratch/temporary folder so you can monitor the progress of the calculation. This folder has the name `slurm_####` where `####` is the job-id. 
+Once you have submitted your job, you can monitor it by using the `squeue` command. 
+
+In this example, we are submitting a job to the `compchem.36` queue on cruntch4 (the `-p compchem.36` flag), and we use 9 CPU cores for calculation (the `-c 9` flag). The `-s local` flag specifies that the calculations are performed on a scratch/temporary folder on the local disk of the node. The checkpoint and output files are copied over to the folder from where the calculation is submitted once it is over. During the calculation, a symbolic link is created to this scratch/temporary folder so you can monitor the progress of the calculation. This folder has the name `slurm_####` where `####` is the job-id. 
 
 ## First Steps
 
@@ -132,11 +134,11 @@ You should now log off from cruntch4 and log on again to activate these changes.
 
 ### Folder Structure
 
-You should keep an organized structure of folder and file names. For example, it is a good practice to have a sub-folder for each lecture, system, or project, as you see relevant and helpful to keep an organized structure.
+You should keep an organized structure of folders and file names. For example, it is a good practice to have a sub-folder for each lecture, system, or project, as you see relevant and helpful to keep an organized structure.
 
 **Note: please do not use spaces in file and folder names. Also, file and folder names are case sensitive on Linux**
 
-You should start by creating a new folder called `Runs` in your home folder to keep all runs for the course. You can do that by the following command
+You should start by creating a new folder called `Runs` in your home folder to keep all runs for the course. You can do that with the following command
 
 ```
 mkdir Runs
@@ -153,12 +155,10 @@ You can use the `pwd` to see the full path to the current folder
 Let us then also create a sub-folder in `Runs` for today's lecture
 
 ```
-mkdir Lecture-2_August-27-2024
+mkdir Lecture-1_August-26-2025
 ```
 
 then go to that folder.
-
-then go to that folder. 
 
 Then go back to the home folder by either using `cd ..` twice or by using the `cd ~` command. Make sure you are in the home folder by using the `pwd` command. 
 
@@ -171,8 +171,10 @@ We will do a simple DFT geometrical optimization on a [Tyrosine](https://pubchem
 You should copy the input file from the shared folder for the course using the following command:
 
 ```
-cp /storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2024/Lecture-2_August-27-2024/Tyrosine_b3lyp_cc-pvdz_opt.gjf . 
+cp /storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-1_August-26-2025/Tyrosine_b3lyp_cc-pvdz_opt.gjf . 
 ```
+
+Here, `.` means that we copy the file to the current folder you are in.
 
 Please use either `cat` or `vi` to look at this input file. 
 
@@ -208,7 +210,7 @@ Tyrosine_b3lyp_cc-pvdz_opt.final.xyz
 ```
 We can then use this geometry for further calculations. 
 
-Now, you should do the same calculation for L-Tryptophan. You should get the initial coordinates by using a smiles string from Pubchem. You can use the Jupyter notebook shown in class to do this. Make sure that this inital geometry looks resonable. Here you need to copy and edit the previously used input file. 
+Now, you should do the same calculation for L-Tryptophan. You should get the initial coordinates by using a smiles string from Pubchem. You can use the Jupyter notebook shown in class to do this. Make sure that this initial geometry looks reasonable. Here, you need to copy and edit the previously used input file. 
 
 
 
