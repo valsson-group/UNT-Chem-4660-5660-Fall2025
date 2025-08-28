@@ -10,7 +10,7 @@ You should start by creating a new sub-folder under `Runs` for today's runs.
 
 You should start with the L-Tryptophan system we considered in the last lecture. 
 
-You should use the geometry obtained from the geometrical optimization. To extract this geometry from the Gaussian log file, you can use the following command 
+You should use the geometry obtained from the geometrical optimization. 
 
 You can extract the final geometry using the `get_g16_co` script:
 ```
