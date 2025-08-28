@@ -27,7 +27,7 @@ You should start by creating a new sub-folder under `Runs` for today's runs.
 
 We will consider a L-Tryptophan molecule. 
 
-Start by getting initial coordinates by using a SMILES string from PubChem. You can use the Jupyter notebook shown in class to do this. Make sure that this initial geometry looks reasonable.
+Start by getting initial coordinates by using a SMILES string from PubChem. You can use the [Jupyter notebook](https://colab.research.google.com/github/valsson-group/UNT-Chem-4660-5660-Fall2025/blob/main/Python-JupyterNotebooks/SMILES_Molecular_Representations.ipynb) shown in class to do this. Make sure that this initial geometry looks reasonable.
 
 You should perform a geometrical optimization using the DFT/B3LYP and the cc-pVDZ basis set. The Gaussian keywords that you should use are `OPT  B3LYP/cc-pVDZ`. Note that this setup is the same as the one used in Lecture 1, so you can use the files from that lecture as a starting point to see how the input file should look like.
 
