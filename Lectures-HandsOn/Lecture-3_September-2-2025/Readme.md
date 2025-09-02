@@ -8,7 +8,7 @@ Instead, we will consider results from calculations for L-Tryptophan performed p
 
 You are supposed to analyze the Gaussian 16 and ORCA 6 output files. 
 
-All the files can be found at the following link on cruntch4
+All the files can be found at the following link on cruntch4:
 ```
 /storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-3_September-2-2025
 ```
