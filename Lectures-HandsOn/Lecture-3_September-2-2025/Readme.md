@@ -13,7 +13,7 @@ All the files can be found at the following link on cruntch4
 /storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-3_September-2-2025
 ```
 
-You should copy this folder to the `Runs` folder in your home folder by using the `cp` command (see [Lecture 1](https://github.com/valsson-group/UNT-Chem-4660-5660-Fall2025/tree/main/Lectures-HandsOn/Lecture-1_August-26-2025) for appropriate usage of the `cp` command). 
+You should copy this folder to the `Runs` folder in your home folder by using the `cp` command (see [Lecture 1](https://github.com/valsson-group/UNT-Chem-4660-5660-Fall2025/tree/main/Lectures-HandsOn/Lecture-1_August-26-2025) for the appropriate usage of the `cp` command when copying folders). 
 
 ## Gaussian 16 - Hartree-Fock Calculations 
 
