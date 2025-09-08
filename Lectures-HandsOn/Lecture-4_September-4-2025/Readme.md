@@ -21,25 +21,21 @@ Once you have created the input file, you can submit the calculation using
 g16 -i <FILENAME>.gjf -p compchem.36 -c 9 -m 16gb -s local
 ```
 
-Once the calculation has finished, verify that it was completed correctly. 
+Once the calculation has finished, verify that it was completed correctly by looking at the log file `<FILENAME>_<date/time suffix>.log`
 
 You can look at the geometries obtained during the optimization using `molden`
 ```
-molden <FILENAME>.log
+molden <FILENAME>_<date/time suffix>.log
 ```
 
 You can extract the final geometry using the `get_g16_co` script:
 ```
-get_g16_co <FILENAME>.log
+get_g16_co <FILENAME>_<date/time suffix>.log
 ```
 
-This will create a file named `outcoo.xyz` that has the XYZ coordinates (in units of Angstrom) for the final geometry. Here, we will rename this file so that it has the same prefix name as the input file 
+This will create a file named `<FILENAME>.xyz` that has the XYZ coordinates (in units of Angstrom) for the final geometry. You can look at this geometry using molden:
 ```
-mv outcoo.xyz <FILENAME>.final.xyz
-```
-You can then look at this geometry using molden:
-```
-molden <FILENAME>.final.xyz
+molden <FILENAME>.xyz
 ```
 
 You can also perform the geometrical optimization using ORCA by using the `OPT` keyword; see below for further information about the structure of the ORCA input file. One benefit of using ORCA is that it will, at the end of the simulation, create a new file with the coordinates of the optimized geometry with the filename `<FILENAME>.xyz`.
