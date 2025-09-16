@@ -12,7 +12,7 @@ It would be best if you do not use GaussView to set up the calculations, only a 
 
 Use the initial geometry that is available on cruntch4 at the following path:
 ```
-/storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-7_Sept-16-2025/Ethylene-Initial-MMFF94.xyz
+/storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-7_September-16-2025/Ethylene-Initial-MMFF94.xyz
 ```
 You should use the B3LYP-D3 with the cc-pVDZ basis set for the calculations.
 
