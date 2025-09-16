@@ -28,7 +28,7 @@ For the ORCA calculations, you can open the output file with ChimeraX or Avagadr
 
 ### Obtaining IR spectrum from ORCA calculations 
 
-For ORCA, you can also obtain the IR spectrum using the `orca_mapspc` command line tool; see ORCA 6.1 [manual]([https://www.faccts.de/docs/orca/6.0/manual/contents/typical/properties.html#ir-raman-spectra-vibrational-modes-and-isotope-shifts](https://www.faccts.de/docs/orca/6.1/manual/contents/spectroscopyproperties/vibrations.html#sec-spectroscopyproperties-vib-ir))
+For ORCA, you can also obtain the IR spectrum using the `orca_mapspc` command line tool; see ORCA 6.1 [manual](https://www.faccts.de/docs/orca/6.1/manual/contents/spectroscopyproperties/vibrations.html#sec-spectroscopyproperties-vib-ir)
 
 To be able to use the `orca_mapspc` tool, you must load the `ORCA/6.1.0_avx2` module on cruntch4:
 ```
@@ -40,7 +40,7 @@ orca_mapspc <FILENAME>.out ir -w25
 ```
 Where `-w25` is a linewidth parameter that controls the broadening of each peak (done with a Gaussian kernel). This will result in a data file with the filename `<FILENAME>.out.ir.dat` that you can plot. By default, the spectrum will be in inverse centimeters and will be given in terms of transmittance. 
 
-### Vibrational Frequency Calculations -- The Wrong Way
+### Vibrational Frequency Calculations - The Wrong Way
 
 Try to perform a vibrational frequency calculation without doing a geometrical optimization, that is, using the following keywords:
 - Gaussian: `FREQ`
