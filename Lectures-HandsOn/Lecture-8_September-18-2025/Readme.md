@@ -1,6 +1,6 @@
-# Lecture 7 - Vibrational Frequency Calculations 
+# Lecture 8 - Vibrational Frequency Calculations 
 
-September 16, 2025
+September 18, 2025
 
 In today's hands-on, we are going to set up frequency calculations for [Ethylene](https://pubchem.ncbi.nlm.nih.gov/compound/Ethylene), both for Gaussian and ORCA
 
@@ -12,7 +12,7 @@ It would be best if you do not use GaussView to set up the calculations, only a 
 
 Use the initial geometry that is available on cruntch4 at the following path:
 ```
-/storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-7_September-16-2025/Ethylene-Initial-MMFF94.xyz
+/storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-8_September-18-2025/Ethylene-Initial-MMFF94.xyz
 ```
 You should use the B3LYP-D3 with the cc-pVDZ basis set for the calculations.
 
