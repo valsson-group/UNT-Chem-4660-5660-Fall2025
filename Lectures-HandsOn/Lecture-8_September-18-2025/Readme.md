@@ -59,6 +59,7 @@ Extract the Gibbs free energy G at 298.15 K from the Gaussian 16 and ORCA 6.1 ca
 
 Repeat the analysis at 400 K. 
 
+Tip: In ORCA, you can rerun the thermochemistry analysis at different temperatures without having to run the full calculation by reading from the Hessian file, see ORCA 6.1 [manual](https://www.faccts.de/docs/orca/6.1/manual/contents/structurereactivity/thermochemistry.html?q=thermochemistry+&n=1#thermochemistry).
 
 ### Vibrational Frequency Calculations - The Wrong Way
 
