@@ -55,7 +55,7 @@ Where `-w25` is a linewidth parameter that controls the broadening of each peak 
 
 ### Thermochemistry Calculations 
 
-Extract the Gibbs free energy G at 298.15 K from the Gaussian 16 and ORCA 6.1 calculations. What is the thermochemistry correction G<sub>corr</sub> to the Gibbs free energy in kcal/mol? 
+Extract the Gibbs free energy G at 298.15 K from the Gaussian 16 and ORCA 6.1 calculations. What is the thermochemistry correction G<sub>corr</sub> to the Gibbs free energy in kcal/mol? Do you observe a difference in the results between Gaussian 16 and ORCA 6.1?
 
 Repeat the analysis at 400 K. 
 
