@@ -15,7 +15,7 @@ Use the initial geometry that is available on cruntch4 at the following path:
 /storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-8_September-18-2025/Ethylene-Initial-BadGeometry.zyx
 ```
 
-You should use the B3LYP-D3 with the cc-pVDZ basis set for the calculations.
+You should use the PBE0-D3 with the cc-pVDZ basis set for the calculations.
 
 You should perform a geometrical optimization followed by a vibrational frequency calculation at the ground state minimum. The relevant keywords are:
 - Gaussian: `OPT(Tight) FREQ`
