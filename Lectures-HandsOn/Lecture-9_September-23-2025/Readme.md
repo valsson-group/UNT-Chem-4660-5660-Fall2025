@@ -25,7 +25,7 @@ Where `-w25` is a linewidth parameter that controls the broadening of each peak 
 
 ### Plotting and Comparing IR Spectrum to Experiments
 
-One of the files you are given in Assignment 2 is the experimental IR spectrum, presented in absorbance as a function of wavenumber (cm<sup>-1</sup>). Depending on the code used, you will either get the IR spectrum in terms of absorbance or transmittance. Therefore, you will need to manipulate the data to be able to compare two or more spectra on the same plot. The following Jupyter notebook shows how to do this:
+One of the files you are given in Assignment 2 is the experimental IR spectrum, given in absorbance as a function of wavenumber (cm<sup>-1</sup>). Depending on the code used, you will either get the IR spectrum in terms of absorbance or transmittance. Therefore, you will need to manipulate the data to be able to compare two or more spectra on the same plot. The following Jupyter notebook shows how to do this:
 
 [Manipulation of Data and Plotting It Using Using Python](https://colab.research.google.com/github/valsson-group/UNT-Chem-4660-5660-Fall2025/blob/main/Python-Plot-IR-Spectrum/Plot_IR_Spectra.ipynb)
 
