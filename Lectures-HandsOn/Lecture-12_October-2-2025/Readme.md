@@ -2,32 +2,69 @@
 
 October 2, 2025
 
-In today's hands-on, we are going to work on analyzing results from vibrational frequency calculations for Assignment 2
+In today's hands-on, we are going to prepare an input file for a NEB-TS calculation using ORCA. 
 
-### Obtaining IR Spectrum from Gaussian Calculations 
+You should look at the CH<sub>2</sub>OH to CH<sub>3</sub>O proton transfer reaction. 
 
-For Gaussian 16, you can obtain the IR spectrum using GaussView, as was shown in Lecture 8. This allows you to obtan a data text file that you can plot. 
+Note that this is the reverse reaction compared to what is considered in the lecture slides and the example files. 
+Thus, in this case, CH<sub>2</sub>OH is the reactant and CH<sub>3</sub>O is the product. 
 
+Note that the molecule is neutral and a doublet, so you must take that into account in the calculations. 
 
-### Obtaining IR Spectrum from ORCA Calculations 
+You should perform the simulations using B3LYP+D3 and the Def2-SVP basis set. 
 
-For ORCA, you can obtain the IR spectrum using the `orca_mapspc` command line tool; see ORCA 6.1 [manual](https://www.faccts.de/docs/orca/6.1/manual/contents/spectroscopyproperties/vibrations.html#sec-spectroscopyproperties-vib-ir)
+### Preparing the ORCA Input File and Running it
 
-To be able to use the `orca_mapspc` tool, you must load the `ORCA/6.1.0_avx2` module on cruntch4:
+You can copy files needed from the following folder:
 ```
-module load ORCA/6.1.0_avx2
+/storage/nas_scr/shared/groups/compchem-chem5600/Lectures-2025/Lecture-15_October-2-2025/NEB-TS_CH2OH-CH3O_InputFiles
 ```
-Then you use it in the following way:
+
+This includes the input file and XYZ files for the reactant and product. 
+
+You will need to edit the input file  `NEB-TS_CH2OH-CH3O.inp` to add the relevant reactant and product XYZ files, and the appropriate keywords for the level of theory. You also need to add the keyword for the NEB-TS calculations. 
+
+Note, in this case, CH<sub>2</sub>OH is the reactant and CH<sub>3</sub>O is the product. Make sure that this is correctly specified in the input file. 
+
+Once you have the input file, you should submit it using the ORCA wrapper. 
+
+**Note, you should use ORCA 5.0.3 for the calculations**.  
+
+I recommend using 18 cores for the calculations and specifying 64 GB of memory. 
+
+The calculation should take around 3-4 minutes. 
+
+### Analyzing the Results 
+
+Once the calculation has finished, take a look at the initial guess for the NEB using molden:
 ```
-orca_mapspc <FILENAME>.out ir -w25
+molden <input file>_initial_path_trj.xyz
 ```
-Where `-w25` is a linewidth parameter that controls the broadening of each peak (done with a Gaussian kernel). This will result in a data file with the filename `<FILENAME>.out.ir.dat` that you can plot. By default, the spectrum will be in inverse centimeters and will be given in terms of transmittance. 
+Does this path make sense? 
 
-### Plotting and Comparing IR Spectrum to Experiments
+You should also take a look at the converged NEB minimum energy path:
+```
+molden <input file>_MEP_trj.xyz
+```
+How does this path compare to the initial NEB guess?
 
-One of the files you are given in Assignment 2 is the experimental IR spectrum, given in absorbance as a function of wavenumber (cm<sup>-1</sup>). Depending on the code used, you will either get the IR spectrum in terms of absorbance or transmittance. Therefore, you will need to manipulate the data to be able to compare two or more spectra on the same plot. The following Jupyter notebook shows how to do this:
+You should also look at the converged transition state structure:
+```
+molden <input file>_NEB-TS_converged.xyz
+```
+Does this transition state structure make sense? 
 
-[Manipulation of Data and Plotting It Using Using Python](https://colab.research.google.com/github/valsson-group/UNT-Chem-4660-5660-Fall2025/blob/main/Python-Plot-IR-Spectrum/Plot_IR_Spectra.ipynb)
+Check the vibrational frequencies for the transition state structure. Does it have a single imaginary frequency as it should? 
+
+You can also look at the energies along the NEB minimum energy path by plotting the `<input-file>.final.interp` file, for example using gnuplot:
+```
+plot '<input-file>.final.interp' u 1:3
+```
+
+
+
+
+
 
 
 
